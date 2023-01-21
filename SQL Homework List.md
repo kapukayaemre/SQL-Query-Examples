@@ -9,7 +9,7 @@
 
 1- film tablosunda bulunan title ve description sütunlarındaki verileri sıralayınız.
 
-`js SELECT title,description FROM film;`
+`SELECT title,description FROM film;`
 
 ---
 
@@ -374,7 +374,7 @@ GROUP BY store_id;`
 
 3- film tablosunda en düşük rental_rate ve en düşün replacement_cost değerlerine sahip filmleri sıralayınız.
 
-```
+```js
 SELECT title,rental_rate,replacement_cost FROM film WHERE rental_rate =
 (
 	SELECT MIN(rental_rate) FROM film
@@ -392,7 +392,7 @@ ORDER BY title DESC;
 
 4- payment tablosunda en fazla sayıda alışveriş yapan müşterileri(customer) sıralayınız.
 
-```
+```js
 SELECT payment.customer_id, customer.first_name, customer.last_name,  COUNT(payment.customer_id)
 FROM payment
 INNER JOIN customer ON customer.customer_id = payment.customer_id
